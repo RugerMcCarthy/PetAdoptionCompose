@@ -7,10 +7,11 @@
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-It's a fake cat adoption app, for the #AndroidDevChallenge of Jetpack Compose.
+A fake cat adoption app, for the #AndroidDevChallenge of Jetpack Compose.
 
 - Lists some cats to be adopted.
-- Click to select your favorite cat and support to cancel.
+- Click detail button can obtain the detail information
+- In detail page, you select the cat that you interest and support to cancel adopt.
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
