@@ -21,7 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.androiddevchallenge.R
 
-class CatViewModel: ViewModel() {
+class CatViewModel : ViewModel() {
     val catList by mutableStateOf(
         listOf(
             CatInfo("Judy", "Alabama", "Female", "9 Month", "Yes", R.drawable.cat_judy),
