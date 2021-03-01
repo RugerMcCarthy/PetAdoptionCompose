@@ -18,16 +18,16 @@ package com.example.androiddevchallenge
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.material.Scaffold
+import androidx.compose.material.SnackbarHost
 import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
-import androidx.compose.material.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.androiddevchallenge.data.CatViewModel
 
 @Composable
-fun MainLayout(context: Context){
+fun MainLayout(context: Context) {
     val snackbarHostState = SnackbarHostState()
     Scaffold(
         topBar = {
@@ -47,14 +47,21 @@ fun MainLayout(context: Context){
                 viewModel.currentCat = it
             }
         } else {
-            CatDetailInfo(viewModel.currentCat!!) {
-                isAdopted ->
+            CatDetailInfo(viewModel.currentCat!!) { isAdopted ->
                 if (isAdopted != null) {
                     var currentCat = viewModel.currentCat!!
                     if (isAdopted) {
-                        Toast.makeText(context, "Cat ${currentCat.name} is adopted", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            "Cat ${currentCat.name} is adopted",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     } else {
-                        Toast.makeText(context, "Cat ${currentCat.name} adopt is cancel", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            "Cat ${currentCat.name} adopt is cancel",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
                 viewModel.currentCat = null
