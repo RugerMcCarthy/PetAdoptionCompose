@@ -14,7 +14,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
     defaultConfig {
-        applicationId "com.example.androiddevchallenge"
+        applicationId "com.example.androiddevchallenge.petadoption"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
