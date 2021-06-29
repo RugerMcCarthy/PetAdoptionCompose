@@ -15,9 +15,12 @@
  */
 
 buildscript {
-    ext.kotlin_version = '1.4.30'
-    ext.compose_version = '1.0.0-beta01'
-    ext.coroutines_version = '1.4.2'
+    ext {
+        android_gradle_plugin_version = '7.0.0-alpha08'
+        kotlin_version = '1.4.30'
+        compose_version = '1.0.0-beta01'
+        coroutines_version = '1.4.2'
+    }
 
     repositories {
         google()
@@ -25,7 +28,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0-alpha08'
+        classpath "com.android.tools.build:gradle:$android_gradle_plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
