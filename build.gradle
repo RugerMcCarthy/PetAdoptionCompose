@@ -20,9 +20,9 @@ buildscript {
         kotlin_version = '1.5.10'
         compose_version = '1.0.0-beta09'
         coroutines_version = '1.4.3'
-        compose_appcompat_version = '1.2.0'
+        compose_appcompat_version = '1.3.0'
         appcompat_version = compose_appcompat_version
-        compose_activity_version = '1.3.0-alpha03'
+        compose_activity_version = '1.3.0-beta01'
         compose_lifecycle_version = '1.0.0-alpha06'
     }
 
