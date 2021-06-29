@@ -13,9 +13,31 @@ ext {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+    this.rootProject.buildscript.configurations.classpath
+            .resolvedConfiguration
+            .firstLevelModuleDependencies.
+            each {
+                def name = it.name
+                if (name.contains('com.android.tools.build:gradle')) {
+                    def moduleVersion = it.moduleVersion
+                    if (moduleVersion.contains("-")) {
+                        def alphaversionArray = moduleVersion.split("-")[0]
+                        def versionArray = alphaversionArray.toString().split("\\.")
+                        ext.android_builder_main_version = Integer.parseInt(versionArray[0])
+                        ext.android_builder_mid_version = Integer.parseInt(versionArray[1])
+                    } else {
+                        version = moduleVersion
+                        android_builder_version = moduleVersion
+                        ext.android_builder_main_version = Integer.parseInt(android_builder_version.split("\\.")[0])
+                        ext.android_builder_mid_version = Integer.parseInt(android_builder_version.split("\\.")[1])
+                    }
+                }
+            }
     defaultConfig {
         applicationId "com.example.androiddevchallenge.petadoption"
         minSdkVersion 23
+        //Android 23 get crash
+        // No static method hashCode(I)I in class Ljava/lang/Integer; or its super classes (declaration of 'java.lang.Integer' appears in /system/framework/core-libart.jar)
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
